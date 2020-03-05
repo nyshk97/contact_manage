@@ -1,0 +1,9 @@
+<% provide(:title, "Edit") %>
+<h1>Tests#edit</h1>
+<%= form_for(@test) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div><%= f.label :name %></div>
+  <div><%= f.text_field :name %></div>
+  <div><%= f.submit %></div>
+<% end %>
+<%= link_to '戻る', tests_path %>

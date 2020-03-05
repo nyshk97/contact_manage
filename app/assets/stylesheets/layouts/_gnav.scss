@@ -1,0 +1,17 @@
+.gnav{
+  &__list {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    li{
+      a{
+        padding: 20px;
+        display: block;
+        i{
+          font-size: 2rem;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.sp {
+  @include sp {
+    display: block;
+  }
+}
+
+.nsp {
+  @include sp {
+    display: none;
+  }
+}

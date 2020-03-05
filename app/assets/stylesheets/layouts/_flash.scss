@@ -1,0 +1,17 @@
+.flash{
+  background: #d4edda;
+  &__container{
+    padding: 10px;
+  }
+  &__txt{
+    font-size: 1.4rem;
+  }
+  &.-success{
+    background: #d4edda;
+    color: #145723;
+  }
+  &.-danger{
+    background: #f8d6da;
+    color: #711b24;
+  }
+}

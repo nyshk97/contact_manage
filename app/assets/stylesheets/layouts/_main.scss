@@ -1,0 +1,10 @@
+.main {
+  background: #fff;
+  max-width: $contents-width;
+  padding: 10px 30px 40px;
+  margin: 35px auto;
+  border-radius: $border-radius;
+  @include sp{
+    padding: 10px 10px 40px;
+  }
+}

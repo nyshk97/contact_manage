@@ -1,0 +1,10 @@
+.footer {
+  background: $black;
+  color: #fff;
+  height: 24px;
+  display: flex;
+  small {
+    align-items: center;
+    font-size: 1.2rem;
+  }
+}
