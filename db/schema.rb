@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_073819) do
     t.string "name", null: false
     t.string "email"
     t.string "phone"
-    t.string "string"
     t.string "content", limit: 2000
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
