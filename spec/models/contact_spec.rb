@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :content }
+  it { is_expected.to validate_length_of(:content).is_at_most(1000) }
 end
