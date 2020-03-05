@@ -1,0 +1,8 @@
+<h2>お問い合わせ一覧</h2>
+<% @contacts.each do |contact| %>
+  <%= contact.name %>
+  <%= contact.email %>
+  <%= contact.phone %>
+  <%= contact.content %>
+  <%= link_to '編集', edit_contact_path(contact) %>
+<% end %>
