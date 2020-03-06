@@ -1,8 +1,18 @@
+# frozen_string_literal: true
+
 class ContactsController < ApplicationController
+  protect_from_forgery except: [:create]
   def index
     @backlogs = Contact.status(0)
     @wips = Contact.status(1)
     @closes = Contact.status(2)
+  end
+
+  def create
+    @contact = Contact.new(new_contact)
+    unless @contact.save
+      logger.error("[Fail to create]: #{@contact.errors.full_messages}")
+    end
   end
 
   def edit
@@ -18,13 +28,15 @@ class ContactsController < ApplicationController
     end
   end
 
-  def destroy
-    
-  end
+  def destroy; end
 
   private
 
   def contact_params
-    params.require(:contact).permit(:status)
+    params.require(:contact).permit(:status, :name, :email, :phone, :content)
+  end
+
+  def new_contact
+    params.permit(:name, :email, :phone, :content)
   end
 end
