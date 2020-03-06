@@ -1,9 +1,41 @@
-<h2><%= @contact.name %></h2>
-<%= @contact.content %>
-<%= @contact.email %>
-<%= @contact.phone %>
-<%= form_with model: @contact, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<div class="pagettl">
+  <h2 class="pagettl__title">お問い合わせ詳細</h2>
+</div>
+<div class="cdtctt">
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">日時</h2>
+    <p class="cdtctt__txt"><%= l(@contact.created_at, format: :short) %></p>
+  </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">名前</h2>
+    <p class="cdtctt__txt"><%= @contact.name %></p>
+  </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">メールアドレス</h2>
+    <p class="cdtctt__txt"><%= @contact.email %></p>
+  </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">電話番号</h2>
+    <p class="cdtctt__txt"><%= @contact.phone %></p>
+  </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">お問い合わせ内容</h2>
+    <p class="cdtctt__txt"><%= @contact.content %></p>
+  </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">ステータス</h2>
+    <%= form_with model: @contact, local: true, class: 'form' do |f| %>
+    <div class="form__group">
+      <%= f.radio_button :status, 0, class: 'form__radio' %>
+      <%= f.label :status, '未対応', value: 0 %>
+      <%= f.radio_button :status, 1, class: 'form__radio' %>
+      <%= f.label :status, '対応中', value: 1 %>
+      <%= f.radio_button :status, 2, class: 'form__radio' %>
+      <%= f.label :status, '対応済', value: 2 %>
+    </div>
+      <div class="form__group">
+        <%= f.submit class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
