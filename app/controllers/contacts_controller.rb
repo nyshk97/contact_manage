@@ -10,10 +10,21 @@ class ContactsController < ApplicationController
   end
 
   def update
-    
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      redirect_to root_url, notice: 'ステータスを編集しました'
+    else
+      render :edit
+    end
   end
 
   def destroy
     
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:status)
   end
 end
