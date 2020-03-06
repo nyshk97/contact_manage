@@ -1,8 +1,32 @@
 <h2>お問い合わせ一覧</h2>
-<% @contacts.each do |contact| %>
-  <%= contact.name %>
-  <%= contact.email %>
-  <%= contact.phone %>
-  <%= contact.content %>
-  <%= link_to '編集', edit_contact_path(contact) %>
-<% end %>
+<h3>未対応</h3>
+<table>
+  <tr>
+    <th>名前</th>
+    <th>メールアドレス</th>
+    <th>電話番号</th>
+    <th>問い合わせ内容</th>
+    <th></th>
+  </tr>
+  <% @backlogs.each do |backlog| %>
+  <tr>
+    <td><%= backlog.name %></td>
+    <td><%= backlog.email %></td>
+    <td><%= backlog.phone %></td>
+    <td><%= backlog.content %></td>
+    <td><%= link_to '編集', edit_contact_path(backlog) %></td>
+  </tr>
+  <% end %>
+</table>
+<h3>対応中</h3>
+
+<h3>対応済</h3>
+
+<style>
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+</style>

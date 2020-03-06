@@ -2,3 +2,8 @@
 <%= @contact.content %>
 <%= @contact.email %>
 <%= @contact.phone %>
+<%= form_with model: @contact, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
