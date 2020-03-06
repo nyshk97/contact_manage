@@ -14,7 +14,7 @@
     <% flash.each do |message_type, message| %>
       <div class="<%= message_type %>"><%= message %></div>
     <% end %>
-    <main>
+    <main class="main">
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>

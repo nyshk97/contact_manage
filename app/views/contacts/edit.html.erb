@@ -1,2 +1,26 @@
-<h1>Contacts#edit</h1>
-<p>Find me in app/views/contacts/edit.html.erb</p>
+<div class="pagettl">
+  <h2 class="pagettl__title">お問い合わせ詳細</h2>
+</div>
+<div class="cdtctt">
+  <%= render 'detail_item', title: '日時', txt: l(@contact.created_at, format: :short) %>
+  <%= render 'detail_item', title: '名前', txt: @contact.name %>
+  <%= render 'detail_item', title: 'メールアドレス', txt: @contact.email %>
+  <%= render 'detail_item', title: '電話番号', txt: @contact.phone %>
+  <%= render 'detail_item', title: '内容', txt: @contact.content %>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">ステータス</h2>
+    <%= form_with model: @contact, local: true, class: 'form' do |f| %>
+    <div class="form__group">
+      <%= f.radio_button :status, 0, class: 'form__radio' %>
+      <%= f.label :status, '未対応', value: 0 %>
+      <%= f.radio_button :status, 1, class: 'form__radio' %>
+      <%= f.label :status, '対応中', value: 1 %>
+      <%= f.radio_button :status, 2, class: 'form__radio' %>
+      <%= f.label :status, '対応済', value: 2 %>
+    </div>
+      <div class="form__group">
+        <%= f.submit class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

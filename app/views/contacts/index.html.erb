@@ -1,8 +1,17 @@
-<h2>お問い合わせ一覧</h2>
-<% @contacts.each do |contact| %>
-  <%= contact.name %>
-  <%= contact.email %>
-  <%= contact.phone %>
-  <%= contact.content %>
-  <%= link_to '編集', edit_contact_path(contact) %>
-<% end %>
+<div class="pagettl">
+  <h2 class="pagettl__title">お問い合わせ一覧</h2>
+</div>
+<div class="idxctt">
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">未対応</h3>
+    <%= render 'table', contacts: @backlogs %>
+  </div>
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">対応中</h3>
+    <%= render 'table', contacts: @wips %>
+  </div>
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">対応済</h3>
+    <%= render 'table', contacts: @closes %>
+  </div>
+</div>
