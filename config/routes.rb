@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: %i[index edit update destroy]
+  resources :contacts, only: %i[index create edit update destroy]
 end
