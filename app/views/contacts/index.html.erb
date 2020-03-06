@@ -4,71 +4,14 @@
 <div class="idxctt">
   <div class="idxctt__item">
     <h3 class="idxctt__title">未対応</h3>
-    <table class="idxctt__table">
-      <tr>
-        <th>日時</th>
-        <th>名前</th>
-        <th>メールアドレス</th>
-        <th>電話番号</th>
-        <th>問い合わせ内容</th>
-        <th></th>
-      </tr>
-      <% @backlogs.each do |contact| %>
-      <tr>
-        <td><%= l(contact.created_at, format: :short) %></td>
-        <td><%= contact.name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= contact.content.truncate(10) %></td>
-        <td><%= link_to '編集', edit_contact_path(contact) %></td>
-      </tr>
-      <% end %>
-    </table>
+    <%= render 'table', contacts: @backlogs %>
   </div>
   <div class="idxctt__item">
     <h3 class="idxctt__title">対応中</h3>
-    <table class="idxctt__table">
-      <tr>
-        <th>日時</th>
-        <th>名前</th>
-        <th>メールアドレス</th>
-        <th>電話番号</th>
-        <th>問い合わせ内容</th>
-        <th></th>
-      </tr>
-      <% @wips.each do |contact| %>
-      <tr>
-        <td><%= l(contact.created_at, format: :short) %></td>
-        <td><%= contact.name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= contact.content.truncate(10) %></td>
-        <td><%= link_to '編集', edit_contact_path(contact) %></td>
-      </tr>
-      <% end %>
-    </table>
+    <%= render 'table', contacts: @wips %>
   </div>
   <div class="idxctt__item">
     <h3 class="idxctt__title">対応済</h3>
-    <table class="idxctt__table">
-      <tr>
-        <th>日時</th>
-        <th>名前</th>
-        <th>メールアドレス</th>
-        <th>電話番号</th>
-        <th>問い合わせ内容</th>
-        <th></th>
-      </tr>
-      <% @closes.each do |contact| %>
-      <tr>
-        <td><%= l(contact.created_at, format: :short) %></td>
-        <td><%= contact.name %></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= contact.content %></td>
-        <td><%= link_to '編集', edit_contact_path(contact) %></td>
-      </tr>
-      <% end %>
-    </table>
+    <%= render 'table', contacts: @closes %>
   </div>
 </div>
