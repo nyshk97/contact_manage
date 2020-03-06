@@ -5,13 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Test.create!(
-  [
-    {
-      name: 'パンを買う'
-    },
-    {
-      name: '牛乳を買う'
-    }
-  ]
-)
+10.times do
+  status = rand(0..2)
+  Contact.create!(
+    [
+      {
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        content: Faker::Lorem.sentence,
+        status: status
+      }
+    ]
+  )
+end

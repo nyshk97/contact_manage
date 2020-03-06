@@ -5,7 +5,6 @@
   <%= render 'detail_item', title: '日時', txt: l(@contact.created_at, format: :short) %>
   <%= render 'detail_item', title: '名前', txt: @contact.name %>
   <%= render 'detail_item', title: 'メールアドレス', txt: @contact.email %>
-  <%= render 'detail_item', title: '電話番号', txt: @contact.phone %>
   <%= render 'detail_item', title: '内容', txt: @contact.content %>
   <div class="cdtctt__item">
     <h2 class="cdtctt__title">ステータス</h2>
@@ -19,6 +18,7 @@
       <%= f.label :status, '対応済', value: 2 %>
     </div>
       <div class="form__group">
+        <%= link_to '戻る', 'javascript:history.back()', class: 'btn-outline' %>
         <%= f.submit class: 'btn' %>
       </div>
     <% end %>

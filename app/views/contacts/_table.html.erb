@@ -3,7 +3,6 @@
     <th>日時</th>
     <th>名前</th>
     <th>メールアドレス</th>
-    <th>電話番号</th>
     <th>問い合わせ内容</th>
     <th></th>
   </tr>
@@ -12,7 +11,6 @@
     <td><%= l(contact.created_at, format: :short) %></td>
     <td><%= contact.name %></td>
     <td><%= contact.email %></td>
-    <td><%= contact.phone %></td>
     <td><%= contact.content.truncate(10) %></td>
     <td><%= link_to '編集', edit_contact_path(contact) %></td>
   </tr>

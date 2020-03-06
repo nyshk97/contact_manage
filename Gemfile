@@ -5,6 +5,7 @@ ruby '2.6.5'
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
 gem 'rack-dev-mark'
+gem 'faker'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
