@@ -19,7 +19,7 @@
         <td><%= contact.name %></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
-        <td><%= contact.content %></td>
+        <td><%= contact.content.truncate(10) %></td>
         <td><%= link_to '編集', edit_contact_path(contact) %></td>
       </tr>
       <% end %>
@@ -42,7 +42,7 @@
         <td><%= contact.name %></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
-        <td><%= contact.content %></td>
+        <td><%= contact.content.truncate(10) %></td>
         <td><%= link_to '編集', edit_contact_path(contact) %></td>
       </tr>
       <% end %>
