@@ -1,32 +1,74 @@
-<h2>お問い合わせ一覧</h2>
-<h3>未対応</h3>
-<table>
-  <tr>
-    <th>名前</th>
-    <th>メールアドレス</th>
-    <th>電話番号</th>
-    <th>問い合わせ内容</th>
-    <th></th>
-  </tr>
-  <% @backlogs.each do |backlog| %>
-  <tr>
-    <td><%= backlog.name %></td>
-    <td><%= backlog.email %></td>
-    <td><%= backlog.phone %></td>
-    <td><%= backlog.content %></td>
-    <td><%= link_to '編集', edit_contact_path(backlog) %></td>
-  </tr>
-  <% end %>
-</table>
-<h3>対応中</h3>
-
-<h3>対応済</h3>
-
-<style>
-  h2 {
-    font-size: 3rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-</style>
+<div class="pagettl">
+  <h2 class="pagettl__title">お問い合わせ一覧</h2>
+</div>
+<div class="idxctt">
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">未対応</h3>
+    <table class="idxctt__table">
+      <tr>
+        <th>日時</th>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>電話番号</th>
+        <th>問い合わせ内容</th>
+        <th></th>
+      </tr>
+      <% @backlogs.each do |contact| %>
+      <tr>
+        <td><%= l(contact.created_at, format: :short) %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.content %></td>
+        <td><%= link_to '編集', edit_contact_path(contact) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">対応中</h3>
+    <table class="idxctt__table">
+      <tr>
+        <th>日時</th>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>電話番号</th>
+        <th>問い合わせ内容</th>
+        <th></th>
+      </tr>
+      <% @wips.each do |contact| %>
+      <tr>
+        <td><%= l(contact.created_at, format: :short) %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.content %></td>
+        <td><%= link_to '編集', edit_contact_path(contact) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="idxctt__item">
+    <h3 class="idxctt__title">対応済</h3>
+    <table class="idxctt__table">
+      <tr>
+        <th>日時</th>
+        <th>名前</th>
+        <th>メールアドレス</th>
+        <th>電話番号</th>
+        <th>問い合わせ内容</th>
+        <th></th>
+      </tr>
+      <% @closes.each do |contact| %>
+      <tr>
+        <td><%= l(contact.created_at, format: :short) %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.content %></td>
+        <td><%= link_to '編集', edit_contact_path(contact) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
