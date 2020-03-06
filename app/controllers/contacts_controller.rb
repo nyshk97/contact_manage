@@ -1,8 +1,8 @@
 class ContactsController < ApplicationController
   def index
-    @backlogs = Contact.where(status: 0)
-    @wips = Contact.where(status: 1)
-    @closes = Contact.where(status: 2)
+    @backlogs = Contact.status(0)
+    @wips = Contact.status(1)
+    @closes = Contact.status(2)
   end
 
   def edit
