@@ -5,14 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times do
+40.times do
+  company = Faker::Company.name
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  phone = '09011112222'
+  content = Faker::Lorem.sentence
   status = rand(0..2)
   Contact.create!(
     [
       {
-        name: Faker::Name.name,
-        email: Faker::Internet.email,
-        content: Faker::Lorem.sentence,
+        company: company,
+        name: name,
+        email: email,
+        phone: phone,
+        content: content,
         status: status
       }
     ]
