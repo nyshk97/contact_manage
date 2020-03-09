@@ -6,14 +6,22 @@
     &__title {
       font-size: 1.8rem;
       margin-bottom: 10px;
+      span {
+        font-weight: normal;
+        font-size: 1.2rem;
+      }
     }
     &__table {
+      margin-bottom: 16px;
       tr {
         th, td {
           border: solid 1px;
           padding: 5px 10px;
         }
       }
+    }
+    &__pager {
+      text-align: center;
     }
   }
 }

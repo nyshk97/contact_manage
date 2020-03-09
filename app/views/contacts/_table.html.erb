@@ -1,4 +1,4 @@
-<h3 class="idxctt__title"><%= title %></h3>
+<h3 class="idxctt__title"><%= title %><span>（<%= contacts.total_count %>件）</span></h3>
 <table class="idxctt__table">
   <tr>
     <th>日時</th>
@@ -23,4 +23,6 @@
   </tr>
   <% end %>
 </table>
-<%= paginate contacts %>
+<div class="idxctt__pager">
+  <%= paginate contacts %>
+</div>
