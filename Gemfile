@@ -6,6 +6,7 @@ gem 'dotenv-rails'
 gem 'font-awesome-sass'
 gem 'rack-dev-mark'
 gem 'faker'
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
