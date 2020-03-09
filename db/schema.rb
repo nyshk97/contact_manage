@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_074819) do
+ActiveRecord::Schema.define(version: 2020_03_09_031547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_074819) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", default: 0, comment: "0: 未対応。 1: 対応中。 2: 対応済。"
+    t.string "company"
+    t.string "kana"
   end
 
   create_table "tests", force: :cascade do |t|

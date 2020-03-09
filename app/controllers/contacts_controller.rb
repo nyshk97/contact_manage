@@ -33,10 +33,10 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:status, :name, :email, :phone, :content)
+    params.require(:contact).permit(:status, :company, :name, :kana, :email, :phone, :content)
   end
 
   def new_contact
-    params.permit(:name, :email, :phone, :content)
+    params.permit(:company, :name, :kana, :email, :phone, :content)
   end
 end
