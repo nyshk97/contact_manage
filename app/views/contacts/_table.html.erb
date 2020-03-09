@@ -1,18 +1,24 @@
 <table class="idxctt__table">
   <tr>
     <th>日時</th>
+    <th>会社名</th>
     <th>名前</th>
+    <th>フリガナ</th>
     <th>メールアドレス</th>
+    <th>電話番号</th>
     <th>問い合わせ内容</th>
     <th></th>
   </tr>
   <% contacts.each do |contact| %>
   <tr>
     <td><%= l(contact.created_at, format: :short) %></td>
+    <td><%= contact.company %></td>
     <td><%= contact.name %></td>
+    <td><%= contact.kana %></td>
     <td><%= contact.email %></td>
+    <td><%= contact.phone %></td>
     <td><%= contact.content.truncate(10) %></td>
-    <td><%= link_to '編集', edit_contact_path(contact) %></td>
+    <td><%= link_to '詳細', edit_contact_path(contact) %></td>
   </tr>
   <% end %>
 </table>
