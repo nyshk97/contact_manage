@@ -3,15 +3,6 @@
 </div>
 <div class="idxctt">
   <div class="idxctt__item">
-    <h3 class="idxctt__title">未対応</h3>
-    <%= render 'table', contacts: @backlogs %>
-  </div>
-  <div class="idxctt__item">
-    <h3 class="idxctt__title">対応中</h3>
-    <%= render 'table', contacts: @wips %>
-  </div>
-  <div class="idxctt__item">
-    <h3 class="idxctt__title">対応済</h3>
-    <%= render 'table', contacts: @closes %>
+    <%= render 'table', contacts: @contacts, title: @title %>
   </div>
 </div>
