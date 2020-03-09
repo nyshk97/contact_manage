@@ -27,6 +27,9 @@ module ManageContact
     config.rack_dev_mark.enable = !Rails.env.production?
     config.rack_dev_mark.theme = [:title, Rack::DevMark::Theme::GithubForkRibbon.new(position: 'right', fixed: true, color: 'orange')]
 
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
