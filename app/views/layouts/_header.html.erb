@@ -5,8 +5,21 @@
     </div>
     <nav class="gnav">
       <ul class="gnav__list">
-        <li><a href="#"><i class="fas fa-search"></i>メニュー１</a></li>
-        <li><a href="#"><i class="fab fa-github"></i>メニュー２</a></li>
+        <li>
+          <%= link_to(contacts_path) do %>
+            未対応
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(contacts_path(status: 'wip')) do %>
+            対応中
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(contacts_path(status: 'close')) do %>
+            対応済
+          <% end %>
+        </li>
         <div class="gnav__outer">
       </ul>
     </nav>
