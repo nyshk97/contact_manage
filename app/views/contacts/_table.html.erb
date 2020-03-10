@@ -1,7 +1,7 @@
 <p class="idxctt__itemsum"><%= contacts.total_count %>件</p>
 <table class="idxctt__table">
   <tr>
-    <th>日時</th>
+    <th><%= sort_link(@q, :created_at, "日時") %></th>
     <th><%= sort_link(@q, :company, "会社名") %></th>
     <th><%= sort_link(@q, :name, "Name") %></th>
     <th>フリガナ</th>
