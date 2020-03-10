@@ -1,13 +1,13 @@
 <%= search_form_for @q do |f| %>
-<%= f.label :name, "会社名" %>
+<%= f.label :company, "会社名" %>
 <%= f.search_field :company_cont %>
 <%= f.label :name, "名前" %>
 <%= f.search_field :name_cont %>
-<%= f.label :name, "メールアドレス" %>
+<%= f.label :email, "メールアドレス" %>
 <%= f.search_field :email_cont %>
-<%= f.label :name, "電話番号" %>
+<%= f.label :phone, "電話番号" %>
 <%= f.search_field :phone_cont %>
-<%= f.label :name, "お問い合わせ内容" %>
+<%= f.label :contact, "お問い合わせ内容" %>
 <%= f.search_field :content_cont %>
 <%= f.submit "検索" %>
 <% end %>
@@ -16,7 +16,7 @@
   <tr>
     <th><%= sort_link(@q, :created_at, "日時") %></th>
     <th><%= sort_link(@q, :company, "会社名") %></th>
-    <th><%= sort_link(@q, :name, "Name") %></th>
+    <th><%= sort_link(@q, :name, "名前") %></th>
     <th>フリガナ</th>
     <th><%= sort_link(@q, :email, "メールアドレス") %></th>
     <th><%= sort_link(@q, :phone, "電話番号") %></th>
