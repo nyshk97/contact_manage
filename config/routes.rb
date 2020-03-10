@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       get :closed
     end
   end
+  resources :users, only: %i[new create]
+  resources :sessions, only: %i[new create destroy]
 end

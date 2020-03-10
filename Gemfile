@@ -8,6 +8,7 @@ gem 'rack-dev-mark'
 gem 'faker'
 gem 'kaminari'
 gem 'ransack'
+gem 'sorcery'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
