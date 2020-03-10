@@ -1,3 +1,16 @@
+<%= search_form_for @q do |f| %>
+<%= f.label :name, "会社名" %>
+<%= f.search_field :company_cont %>
+<%= f.label :name, "名前" %>
+<%= f.search_field :name_cont %>
+<%= f.label :name, "メールアドレス" %>
+<%= f.search_field :email_cont %>
+<%= f.label :name, "電話番号" %>
+<%= f.search_field :phone_cont %>
+<%= f.label :name, "お問い合わせ内容" %>
+<%= f.search_field :content_cont %>
+<%= f.submit "検索" %>
+<% end %>
 <p class="idxctt__itemsum"><%= contacts.total_count %>件</p>
 <table class="idxctt__table">
   <tr>
