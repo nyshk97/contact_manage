@@ -1,22 +1,14 @@
 <header class="header">
   <div class="container header__container">
     <div class="header__logo">
-      <h1 class="header__title">問い合わせ管理システム</h1>
+      <h1 class="header__title">
+        <%= link_to '問い合わせ管理システム', root_path %>
+      </h1>
     </div>
     <nav class="gnav">
       <ul class="gnav__list">
         <li>
-          <%= link_to(contacts_path) do %>
-            未対応
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(contacts_path(status: 'wip')) do %>
-            対応中
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(contacts_path(status: 'close')) do %>
+          <%= link_to(closed_contacts_path) do %>
             対応済
           <% end %>
         </li>

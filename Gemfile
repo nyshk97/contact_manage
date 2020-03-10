@@ -7,6 +7,7 @@ gem 'font-awesome-sass'
 gem 'rack-dev-mark'
 gem 'faker'
 gem 'kaminari'
+gem 'ransack'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

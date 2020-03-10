@@ -3,17 +3,13 @@
 class ContactsController < ApplicationController
   protect_from_forgery except: [:create]
   def index
-    status = params[:status]
-    @contacts = Contact.status(0).page(params[:page])
-    @title = '未対応'
-    if status == 'wip'
-      @contacts = Contact.status(1).page(params[:page])
-      @title = '対応中'
-    end
-    if status == 'close'
-      @contacts = Contact.status(2).page(params[:page])
-      @title = '対応済'
-    end
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(distinct: true).active.page(params[:page])
+  end
+
+  def closed
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(distinct: true).status(2).page(params[:page])
   end
 
   def create
