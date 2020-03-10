@@ -2,6 +2,7 @@
 
 class Contact < ApplicationRecord
   scope :status, ->(status) { where(status: status) }
+  scope :active, -> { where.not(status: 2) }
   validates :name, presence: true
   validates :content, presence: true, length: { maximum: 1000 }
 end

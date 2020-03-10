@@ -1,4 +1,3 @@
-<h3 class="idxctt__title"><%= title %><span>（<%= contacts.total_count %>件）</span></h3>
 <table class="idxctt__table">
   <tr>
     <th>日時</th>
@@ -8,6 +7,7 @@
     <th>メールアドレス</th>
     <th>電話番号</th>
     <th>問い合わせ内容</th>
+    <th>ステータス</th>
     <th></th>
   </tr>
   <% contacts.each do |contact| %>
@@ -19,6 +19,7 @@
     <td><%= contact.email %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.content.truncate(10) %></td>
+    <td><%= put_status(contact) %></td>
     <td><%= link_to '詳細', edit_contact_path(contact) %></td>
   </tr>
   <% end %>
