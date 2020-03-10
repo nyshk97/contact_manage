@@ -6,6 +6,10 @@ class ContactsController < ApplicationController
     @contacts = Contact.active.page(params[:page])
   end
 
+  def closed
+    @contacts = Contact.status(2).page(params[:page])
+  end
+
   def create
     @contact = Contact.new(new_contact)
     unless @contact.save
