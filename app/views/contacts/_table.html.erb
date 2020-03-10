@@ -1,11 +1,11 @@
 <table class="idxctt__table">
   <tr>
     <th>日時</th>
-    <th>会社名</th>
-    <th>名前</th>
+    <th><%= sort_link(@q, :company, "会社名") %></th>
+    <th><%= sort_link(@q, :name, "Name") %></th>
     <th>フリガナ</th>
-    <th>メールアドレス</th>
-    <th>電話番号</th>
+    <th><%= sort_link(@q, :email, "メールアドレス") %></th>
+    <th><%= sort_link(@q, :phone, "電話番号") %></th>
     <th>問い合わせ内容</th>
     <th>ステータス</th>
     <th></th>
@@ -24,6 +24,3 @@
   </tr>
   <% end %>
 </table>
-<div class="idxctt__pager">
-  <%= paginate contacts %>
-</div>

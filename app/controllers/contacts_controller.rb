@@ -3,7 +3,8 @@
 class ContactsController < ApplicationController
   protect_from_forgery except: [:create]
   def index
-    @contacts = Contact.active.page(params[:page])
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(distinct: true)
   end
 
   def closed
