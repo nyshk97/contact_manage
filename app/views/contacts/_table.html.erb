@@ -1,3 +1,4 @@
+<p class="idxctt__itemsum"><%= contacts.total_count %>件</p>
 <table class="idxctt__table">
   <tr>
     <th>日時</th>
@@ -24,3 +25,6 @@
   </tr>
   <% end %>
 </table>
+<div class="idxctt__pager">
+  <%= paginate contacts %>
+</div>
