@@ -2,6 +2,7 @@
 
 class ContactsController < ApplicationController
   protect_from_forgery except: [:create]
+  skip_before_action :require_login, only: [:create]
   def index
     @q = Contact.ransack(params[:q])
     @contacts = @q.result(distinct: true).active.page(params[:page])
