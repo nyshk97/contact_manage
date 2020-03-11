@@ -2,10 +2,11 @@
 
 FactoryBot.define do
   factory :contact do
-    name { 'MyString' }
-    email { 'MyString' }
-    phone { 'MyString' }
-    string { 'MyString' }
-    content { 'MyString' }
+    company { 'サンプル株式会社' }
+    name { '山田太郎' }
+    kana { 'ヤマダタロウ' }
+    email { 'test@example.com' }
+    phone { '09011112222' }
+    content { 'hogehogehoge' }
   end
 end
