@@ -3,5 +3,9 @@
     &__item {
       margin: 0 0 30px;
     }
+    &__list {
+      list-style: disc;
+      padding-left: 40px;
+    }
   }
 }

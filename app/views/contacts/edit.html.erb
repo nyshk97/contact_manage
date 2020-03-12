@@ -26,4 +26,18 @@
       </div>
     <% end %>
   </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">コメント</h2>
+    <ul class="cdtctt__list">
+      <% @comments.each do |c| %>
+      <li><%= c.content %>： <%= l(c.created_at, format: :short) %> <%= c.user.email %></li>
+      <% end %>
+    </ul>
+    <%= form_with model: @new_comment, url: comments_path, local: true do |f| %>
+      <%= f.text_field :content %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :contact_id, value: @contact.id %>
+      <%= f.submit '追加' %>
+    <% end %>
+  </div>
 </div>
