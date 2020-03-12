@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.feature "対応済に変更", type: :feature do
+RSpec.feature "問い合わせ編集", type: :feature do
   let!(:contact) { create(:contact) }
   let(:user) { create(:user) }
-  it 'ステータス変更' do
+  it '対応済に変更' do
     login(user)
     click_link '詳細'
     expect(page).to have_content contact.name
