@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
     if @contact.update(contact_params)
-      redirect_to root_url, notice: 'ステータスを編集しました'
+      redirect_to root_url, notice: '更新しました'
     else
       render :edit
     end
