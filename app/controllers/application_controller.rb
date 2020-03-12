@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def not_authenticated
-    redirect_to new_session_url
+    redirect_to(login_url, alert: 'ログインしてください')
   end
 end

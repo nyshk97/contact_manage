@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     logout
-    redirect_to(root_url, notice: 'ログアウトしました')
+    redirect_to(login_url, notice: 'ログアウトしました')
   end
 end
