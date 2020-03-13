@@ -27,6 +27,8 @@
 end
 
 User.create!(
+  company_id: 'abcd1234',
   email: 'test1@test.com',
+  name: '茂野吾郎',
   password: 'hogehoge'
 )

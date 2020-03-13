@@ -30,7 +30,7 @@
     <h2 class="cdtctt__title">コメント</h2>
     <ul class="cdtctt__list">
       <% @comments.each do |c| %>
-      <li><%= c.content %>： <%= l(c.created_at, format: :short) %> <%= c.user.email %></li>
+      <li><%= c.content %>： <%= c.user.name %>(<%= l(c.created_at, format: :short) %>)</li>
       <% end %>
     </ul>
     <%= form_with model: @new_comment, url: comments_path, local: true do |f| %>
