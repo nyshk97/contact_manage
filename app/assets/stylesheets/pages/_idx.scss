@@ -1,4 +1,26 @@
 .idx {
+  &src {
+    padding: 15px 10px;
+    background: #eee;
+    margin-bottom: 18px;
+    &__title {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+    &__group {
+      display: flex;
+      margin-bottom: 8px;
+      label {
+        width: 160px;
+      }
+      input {
+        width: calc(100% - 160px);
+      }
+    }
+    &__submit {
+      padding-left: 160px;
+    }
+  }
   &ctt {
     &__item {
       margin-bottom: 30px;
@@ -15,7 +37,6 @@
       margin-bottom: 16px;
       tr {
         th, td {
-          border: solid 1px;
           padding: 5px 10px;
         }
       }
