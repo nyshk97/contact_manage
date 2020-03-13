@@ -1,20 +1,8 @@
-<%= search_form_for @q do |f| %>
-<%= f.label :company, "会社名" %>
-<%= f.search_field :company_cont %>
-<%= f.label :name, "名前" %>
-<%= f.search_field :name_cont %>
-<%= f.label :email, "メールアドレス" %>
-<%= f.search_field :email_cont %>
-<%= f.label :phone, "電話番号" %>
-<%= f.search_field :phone_cont %>
-<%= f.label :contact, "お問い合わせ内容" %>
-<%= f.search_field :content_cont %>
-<%= f.submit "検索" %>
-<% end %>
-<p class="idxctt__itemsum"><%= contacts.total_count %>件</p>
+<p class="idxctt__itemsum">（全<%= contacts.total_count %>件）</p>
 <table class="idxctt__table">
   <tr>
     <th><%= sort_link(@q, :created_at, "日時") %></th>
+    <th>種別</th>
     <th><%= sort_link(@q, :company, "会社名") %></th>
     <th><%= sort_link(@q, :name, "名前") %></th>
     <th>フリガナ</th>
@@ -27,6 +15,7 @@
   <% contacts.each do |contact| %>
   <tr>
     <td><%= l(contact.created_at, format: :short) %></td>
+    <td>グラフィック制作</td>
     <td><%= contact.company %></td>
     <td><%= contact.name %></td>
     <td><%= contact.kana %></td>
@@ -34,7 +23,7 @@
     <td><%= contact.phone %></td>
     <td><%= contact.content.truncate(10) %></td>
     <td><%= put_status(contact) %></td>
-    <td><%= link_to '詳細', edit_contact_path(contact) %></td>
+    <td><%= link_to '詳細', edit_contact_path(contact), class: 'btn-outline' %></td>
   </tr>
   <% end %>
 </table>
