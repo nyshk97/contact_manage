@@ -24,6 +24,7 @@ class ContactsController < ApplicationController
     @contact = Contact.find(params[:id])
     @comments = Comment.where(contact_id: params[:id])
     @new_comment = Comment.new
+    @users = User.all
   end
 
   def update
@@ -40,7 +41,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:status)
+    params.require(:contact).permit(:status, :user_id)
   end
 
   def new_contact
