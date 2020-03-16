@@ -10,9 +10,9 @@
   <%= render 'detail_item', title: 'メールアドレス', txt: @contact.email %>
   <%= render 'detail_item', title: '電話番号', txt: @contact.phone %>
   <%= render 'detail_item', title: '内容', txt: @contact.content %>
+  <%= form_with model: @contact, local: true, class: 'form' do |f| %>
   <div class="cdtctt__item">
     <h2 class="cdtctt__title">ステータス</h2>
-    <%= form_with model: @contact, local: true, class: 'form' do |f| %>
     <div class="form__group">
       <%= f.radio_button :status, 0, class: 'form__radio' %>
       <%= f.label :status, '未対応', value: 0 %>
@@ -21,12 +21,16 @@
       <%= f.radio_button :status, 2, class: 'form__radio' %>
       <%= f.label :status, '対応済', value: 2 %>
     </div>
-      <div class="form__group">
-        <%= link_to '戻る', 'javascript:history.back()', class: 'btn-outline' %>
-        <%= f.submit class: 'btn' %>
-      </div>
-    <% end %>
   </div>
+  <div class="cdtctt__item">
+    <h2 class="cdtctt__title">担当者</h2>
+    <%= f.collection_select :user_id, @users, :id, :name, {prompt: '担当者を選択'} %>
+  </div>
+  <div class="form__group">
+    <%= link_to '戻る', 'javascript:history.back()', class: 'btn-outline' %>
+    <%= f.submit class: 'btn' %>
+  </div>
+  <% end %>
   <div class="cdtctt__item">
     <h2 class="cdtctt__title">コメント</h2>
     <ul class="cdtctt__list">
@@ -35,10 +39,10 @@
       <% end %>
     </ul>
     <%= form_with model: @new_comment, url: comments_path, local: true do |f| %>
-      <%= f.text_field :content %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <%= f.hidden_field :contact_id, value: @contact.id %>
-      <%= f.submit '追加' %>
+    <%= f.text_field :content %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :contact_id, value: @contact.id %>
+    <%= f.submit '追加' %>
     <% end %>
   </div>
 </div>

@@ -9,6 +9,7 @@
     <th><%= sort_link(@q, :email, "メールアドレス") %></th>
     <th><%= sort_link(@q, :phone, "電話番号") %></th>
     <th>問い合わせ内容</th>
+    <th>担当者</th>
     <th>ステータス</th>
     <th></th>
   </tr>
@@ -19,9 +20,10 @@
     <td><%= contact.company %></td>
     <td><%= contact.name %></td>
     <td><%= contact.kana %></td>
-    <td><%= contact.email %></td>
+    <td><%= contact.email.truncate(10) %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.content.truncate(10) %></td>
+    <td><%= put_assign(contact) %></td>
     <td><%= put_status(contact) %></td>
     <td><%= link_to '詳細', edit_contact_path(contact), class: 'btn-outline' %></td>
   </tr>

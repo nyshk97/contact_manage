@@ -7,4 +7,12 @@ module ContactsHelper
     status = '対応済' if contact.status == 2
     status
   end
+
+  def put_assign(contact)
+    if contact.user_id
+      return contact.user.name
+    else
+      return 'なし'
+    end
+  end
 end
