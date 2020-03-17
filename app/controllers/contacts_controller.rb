@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   skip_before_action :require_login, only: [:create]
   def index
     @q = Contact.ransack(params[:q])
-    @contacts = @q.result(distinct: true).active.page(params[:page])
+    @contacts = @q.result(distinct: true).active.page(params[:page]).includes(:user)
   end
 
   def closed
@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
-    @comments = Comment.where(contact_id: params[:id])
+    @comments = Comment.where(contact_id: params[:id]).includes(:user)
     @new_comment = Comment.new
     @users = User.all
   end
