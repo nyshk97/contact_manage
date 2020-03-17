@@ -17,7 +17,11 @@
             ログアウト
           <% end %>
         </li>
-        <div class="gnav__outer">
+        <li>
+          <%= link_to(user_path(current_user)) do %>
+            マイページ
+          <% end %>
+        </li>
       </ul>
     </nav>
   </div>
