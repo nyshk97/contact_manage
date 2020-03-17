@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "問い合わせ編集", type: :feature do
   let!(:contact) { create(:contact) }
-  let(:user) { create(:user) }
+  let(:user) { create(:user, email: 'test2@test.com') }
 
   it '対応済に変更' do
     open_contact(user)
