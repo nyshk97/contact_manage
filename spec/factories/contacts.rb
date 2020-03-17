@@ -8,5 +8,6 @@ FactoryBot.define do
     email { 'test@example.com' }
     phone { '09011112222' }
     content { 'hogehogehoge' }
+    association :user
   end
 end

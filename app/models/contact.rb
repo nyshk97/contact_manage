@@ -2,7 +2,7 @@
 
 class Contact < ApplicationRecord
   has_many :comments
-  belongs_to :user
+  belongs_to :user, optional: true
   scope :status, ->(status) { where(status: status).order(id: :desc) }
   scope :active, -> { where.not(status: 2).order(id: :desc) }
   validates :name, presence: true

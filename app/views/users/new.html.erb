@@ -1,13 +1,21 @@
 <h1>新規会員登録</h1>
-<%= form_with model: @user, local: true do |f| %>
-  <%= f.label :email, 'メールアドレス' %>
-  <%= f.text_field :email  %>
-
-  <%= f.label :password, 'パスワード' %>
-  <%= f.password_field :password  %>  
-
-  <%= f.label :password_confirmation, 'パスワード確認' %>
-  <%= f.password_field :password_confirmation  %>     
-
+<%= form_with model: @user, local: true, class: 'regfrm' do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="form__group">
+    <%= f.label :email, '名前' %>
+    <%= f.text_field :name  %>
+  </div>
+  <div class="form__group">
+    <%= f.label :email, 'メールアドレス' %>
+    <%= f.text_field :email  %>
+  </div>
+  <div class="form__group">
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password  %>  
+  </div>
+  <div class="form__group">
+    <%= f.label :password_confirmation, 'パスワード確認' %>
+    <%= f.password_field :password_confirmation  %>     
+  </div>
   <%= f.submit '登録' %>  
 <% end %>

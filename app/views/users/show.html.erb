@@ -1,0 +1,14 @@
+<div class="pagettl">
+  <h2 class="pagettl__title">マイページ</h2>
+</div>
+<div class="mpiinf">
+  <dl class="mpiinf__list">
+    <dt>名前</dt>
+    <dd><%= current_user.name %>ああああああああああああああ</dd>
+  </dl>
+  <dl class="mpiinf__list">
+    <dt>メールアドレス</dt>
+    <dd><%= current_user.email %></dd>
+  </dl>
+  <%= link_to '編集', edit_user_path(current_user), class: 'btn' %>
+</div>

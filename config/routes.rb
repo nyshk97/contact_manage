@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get :closed
     end
   end
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create show edit update]
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
