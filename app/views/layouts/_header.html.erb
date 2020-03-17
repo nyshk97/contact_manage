@@ -9,17 +9,17 @@
       <ul class="gnav__list">
         <li>
           <%= link_to(closed_contacts_path) do %>
-            対応済
-          <% end %>
-        </li>
-        <li>
-          <%= link_to(logout_path, method: :post) do %>
-            ログアウト
+          対応済
           <% end %>
         </li>
         <li>
           <%= link_to(user_path(current_user)) do %>
-            マイページ
+          マイページ
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(logout_path, method: :post) do %>
+          ログアウト
           <% end %>
         </li>
       </ul>

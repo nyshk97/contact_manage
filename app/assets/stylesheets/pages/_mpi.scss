@@ -1,0 +1,12 @@
+.mpiinf {
+  max-width: 600px;
+  &__list {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 10px;
+    dt {
+      // float: left;
+      width: 130px;
+    }
+  }
+}

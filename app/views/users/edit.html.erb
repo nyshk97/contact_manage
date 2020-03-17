@@ -1,0 +1,17 @@
+<div class="pagettl">
+  <h2 class="pagettl__title">マイページ</h2>
+</div>
+<div class="mpefrm">
+  <%= form_with model: @user, local: true do |f| %>
+    <div class="form__group">
+      <%= f.label :name, '名前' %>
+      <%= f.text_field :name, class: 'form__txt' %>
+    </div>
+    <div class="form__group">
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.text_field :email, class: 'form__txt' %>
+    </div>
+    <%= link_to '戻る', 'javascript:history.back()', class: 'btn-outline' %>
+    <%= f.submit '更新する', class: 'btn' %>
+  <% end %>
+</div>
