@@ -28,7 +28,6 @@ class UsersController < ApplicationController
       flash[:info] = '更新しました'
       redirect_to user_url(@user)
     else
-      hoge
       render :edit
     end
   end
