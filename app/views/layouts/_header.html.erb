@@ -12,11 +12,13 @@
           対応済
           <% end %>
         </li>
+        <% if logged_in? %>
         <li>
           <%= link_to(user_path(current_user)) do %>
           マイページ
           <% end %>
         </li>
+        <% end %>
         <li>
           <%= link_to(logout_path, method: :post) do %>
           ログアウト
