@@ -32,3 +32,11 @@ User.create!(
   name: '茂野吾郎',
   password: 'hogehoge'
 )
+3.times do
+  User.create!(
+    company_id: 'abcd1234',
+    email: Faker::Internet.email,
+    name: Faker::Name.name,
+    password: 'hogehoge'
+  )
+end
