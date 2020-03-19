@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   resources :comments, only: %i[create edit update destroy]
   resources :invites, only: %i[new create edit update]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
