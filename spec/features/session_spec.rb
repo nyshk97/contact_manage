@@ -4,6 +4,7 @@ RSpec.feature "Sessions", type: :feature do
   let!(:user) { create(:user) }
   it 'ログイン' do
     visit login_path
+    user.activate!
     fill_in 'メールアドレス', with: user.email
     fill_in 'パスワード', with: 'hogehoge'
     click_on 'ログイン'
