@@ -16,16 +16,14 @@ class InvitesController < ApplicationController
   end
 
   def edit
-    if (@user = User.load_from_activation_token(params[:id]))
-      @user.activate!
-    else
+    unless (@user = User.load_from_activation_token(params[:id]))
       flash[:notice] = '認証に失敗しました'
       redirect_to login_url
     end
   end
-
+  
   def update
-
+    @user.activate!
   end
 
   private

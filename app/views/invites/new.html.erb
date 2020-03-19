@@ -1,3 +1,6 @@
+<div class="pagettl">
+  <h2 class="pagettl__title">ユーザーを追加</h2>
+</div>
 <%= form_with model: @user, url: invites_path, local: true, class: 'form' do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form__group inline">

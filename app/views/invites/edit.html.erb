@@ -1,2 +1,19 @@
-<h1>Invites#edit</h1>
-<p>Find me in app/views/invites/edit.html.erb</p>
+<div class="pagettl">
+  <h2 class="pagettl__title">登録</h2>
+</div>
+<%= form_with model: @user, url: invite_path, local: true, class: 'form' do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form__group inline">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form__txt' %>
+  </div>
+  <div class="form__group inline">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form__txt' %>
+  </div>
+  <div class="form__group inline">
+    <%= f.label :password %>
+    <%= f.text_field :password, class: 'form__txt' %>
+  </div>
+  <%= f.submit %>
+<% end %>
