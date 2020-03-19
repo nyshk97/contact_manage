@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   resources :comments, only: %i[create edit update destroy]
+  resources :invites, only: %i[new create edit update]
 end

@@ -25,7 +25,9 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [
+    "kaiwood.endwise"
+  ]
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
