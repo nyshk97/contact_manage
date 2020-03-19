@@ -217,6 +217,7 @@ Rails.application.config.sorcery.configure do |config|
 
   # --- user config ---
   config.user_config do |user|
+    user.user_activation_mailer = UserMailer
     # -- core --
     # Specify username attributes, for example: [:username, :email].
     # Default: `[:email]`

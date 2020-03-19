@@ -1,9 +1,16 @@
 .form {
   line-height: 1.5;
+  max-width: 600px;
   &__group {
     //項目名とinput等の1つのかたまり
     margin-bottom: 16px;
     margin-bottom: 1.6rem;
+    &.inline {
+      display: flex;
+      label {
+        width: 150px;
+      }
+    }
   }
   &__name {
     //項目名

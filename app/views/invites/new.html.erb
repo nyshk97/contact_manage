@@ -1,2 +1,8 @@
-<h1>Invites#new</h1>
-<p>Find me in app/views/invites/new.html.erb</p>
+<%= form_with model: @user, url: invites_path, local: true, class: 'form' do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="form__group inline">
+    <%= f.label :email, 'メールアドレス' %>
+    <%= f.text_field :email, class: 'form__txt' %>
+  </div>
+  <%= f.submit '招待', class: 'btn' %>
+<% end %>
