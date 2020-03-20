@@ -29,8 +29,14 @@ services:
       - .:/workspace:cached
       - ~/.gitconfig:/root/.gitconfig
       - ~/.vimrc:/root/.vimrc
+      - ~/.vim/colors/iceberg.vim:/root/.vim/colors/iceberg.vim
       - ~/.netrc:/root/.netrc
-      - ~/.bashrc:/root/.bashrc
+      - ~/.zshrc:/root/.zshrc
+      - ~/.zlogin:/root/.zlogin
+      - ~/.zprofile:/root/.zprofile
+      - ~/.zenv:/root/.zenv
+      - ~/.zpreztorc:/root/.zpreztorc
+      - ~/.zprezto:/root/.zprezto
 
       # Uncomment the next line to use Docker from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker-compose for details.
       # - /var/run/docker.sock:/var/run/docker.sock 
