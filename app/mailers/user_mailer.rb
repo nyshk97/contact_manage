@@ -1,5 +1,4 @@
 class UserMailer < ApplicationMailer
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -8,14 +7,14 @@ class UserMailer < ApplicationMailer
   def activation_needed_email(user)
     @user = user
     @url  = "http://0.0.0.0:3000/invites/#{user.activation_token}/edit"
-    mail(:to => user.email,
-         :subject => "Welcome to My Awesome Site")
+    mail(to: user.email,
+         subject: 'Welcome to My Awesome Site')
   end
-   
+
   def activation_success_email(user)
     @user = user
-    @url  = "http://0.0.0.0:3000/login"
-    mail(:to => user.email,
-         :subject => "Your account is now activated")
+    @url  = 'http://0.0.0.0:3000/login'
+    mail(to: user.email,
+         subject: 'Your account is now activated')
   end
 end

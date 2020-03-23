@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature 'Users', type: :feature do
   let(:user) { create(:user) }
 
   it 'ユーザー情報を編集' do

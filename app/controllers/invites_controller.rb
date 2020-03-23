@@ -1,5 +1,5 @@
 class InvitesController < ApplicationController
-  skip_before_action :require_login, only: [:edit, :update]
+  skip_before_action :require_login, only: %i[edit update]
   def new
     @user = User.new
   end
@@ -21,7 +21,7 @@ class InvitesController < ApplicationController
       redirect_to login_url
     end
   end
-  
+
   def update
     @user.activate!
   end

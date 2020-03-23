@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "問い合わせ編集", type: :feature do
+RSpec.feature '問い合わせ編集', type: :feature do
   let!(:contact) { create(:contact) }
   let(:user) { create(:user, email: 'test2@test.com') }
 
@@ -13,7 +13,7 @@ RSpec.feature "問い合わせ編集", type: :feature do
     click_link '対応済'
     expect(page).to have_content contact.name
   end
-  
+
   it 'コメントを追加' do
     comment = 'test comment'
     open_contact(user)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Sessions", type: :feature do
+RSpec.feature 'Sessions', type: :feature do
   let!(:user) { create(:user) }
   it 'ログイン' do
     visit login_path

@@ -10,9 +10,9 @@ module ContactsHelper
 
   def put_assign(contact)
     if contact.user_id
-      return contact.user.name
+      contact.user.name
     else
-      return 'なし'
+      'なし'
     end
   end
 end
